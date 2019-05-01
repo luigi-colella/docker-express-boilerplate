@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    environment: 
+      - PORT=80
+    build: ./app
+    ports:
+      - "8080:80"
+    networks:
+      - webnet
+networks:
+  webnet:
