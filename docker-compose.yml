@@ -4,6 +4,9 @@ services:
     environment: 
       - PORT=80
     build: ./app
+    volumes:
+      - "./app:/app"
+      - "/app/node_modules"
     ports:
       - "8080:80"
     networks:

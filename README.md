@@ -1,5 +1,5 @@
 
-# Express Docker
+# Docker Express
 
 Develop your next Express app easily and without worrying about your machine setup.
 
