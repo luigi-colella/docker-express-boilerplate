@@ -9,6 +9,7 @@ services:
     command: bash -c "yarn --no-bin-links && /bin/bash"
     ports:
       - "8080:80"
+      - "9229:9229"
     networks:
       - webnet
     stdin_open: true
