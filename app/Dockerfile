@@ -4,8 +4,4 @@ WORKDIR /app
 
 COPY . /app
 
-RUN yarn install
-
 EXPOSE ${PORT}
-
-CMD [ "yarn", "start" ]

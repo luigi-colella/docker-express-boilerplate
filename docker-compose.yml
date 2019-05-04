@@ -6,11 +6,12 @@ services:
     build: ./app
     volumes:
       - "./app:/app"
-      - "/app/node_modules"
-    command: "yarn dev"
+    command: bash -c "yarn --no-bin-links && /bin/bash"
     ports:
       - "8080:80"
     networks:
       - webnet
+    stdin_open: true
+    tty: true
 networks:
   webnet:
