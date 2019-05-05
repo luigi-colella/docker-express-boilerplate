@@ -26,7 +26,18 @@ services:
       webnet:
         aliases:
           - mongo
+  redis:
+    image: redis
+    volumes:
+     - redisdatabase:/data
+    ports:
+      - "6379:6379"
+    networks:
+      webnet:
+        aliases:
+          - redis
 networks:
   webnet:
 volumes:
   mongodatabase:
+  redisdatabase:

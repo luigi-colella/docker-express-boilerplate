@@ -5,12 +5,13 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
-    "mongodb": "^3.2.3"
+    "mongodb": "^3.2.3",
+    "redis": "^2.8.0"
   },
   "scripts": {
     "start": "node ./index.js",
-    "dev": "npx nodemon --watch . --legacy-watch ./index.js",
-    "debug": "npx nodemon --watch . --legacy-watch --inspect-brk=0.0.0.0 ./index.js"
+    "dev": "npx nodemon --watch . --ignore node_modules/ --legacy-watch ./index.js",
+    "debug": "npx nodemon --watch . --ignore node_modules/ --legacy-watch --inspect-brk=0.0.0.0 ./index.js"
   },
   "devDependencies": {
     "nodemon": "^1.19.0"

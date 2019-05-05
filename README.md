@@ -14,6 +14,7 @@ Develop your next Express app easily and without worrying about your machine set
 ![Docker](https://github.com/lgcolella/docker-express/raw/master/repository/docker.png "Docker")
 ![Express](https://github.com/lgcolella/docker-express/raw/master/repository/express.png "Express")
 ![MongoDB](https://github.com/lgcolella/docker-express/raw/master/repository/mongo.png "MongoDB")
+![Redis](https://github.com/lgcolella/docker-express/raw/master/repository/redis.png "Redis")
 
 # Requirements
 
