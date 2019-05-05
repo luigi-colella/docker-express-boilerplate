@@ -22,11 +22,11 @@ docker-compose stop
 # Rebuild container's images
 docker-compose build
 
-# Stop and remove containers, volumes and network related to the development environment
+# Stop services' containers without removing them
 docker-compose down
 
-# Stop and remove containers, volumes, images and network related to the development environment
-docker-compose down --rmi=all
+# Stop and remove services' containers, volumes, images and network related to the development environment
+docker-compose down --remove-orphans -v --rmi=all
 ```
 
 # Troubleshooting
@@ -53,3 +53,7 @@ yarn --no-bin-links
 npm install underscore --no-bin-links
 yarn add --no-bin-links
 ```
+
+## Mongodb container exits with error code 14 on Windows or OS X hosts
+
+If you try to share on these host the folder where MongoDB stores data, the container will exit with an error 14. In fact MongoDB uses the memory mapped files which are not suitable for the way used by VirtualBox to share the folders across the container and one of the those hosts. If you want your MongoDB database to persist, use other options offered by Docker like anonymous volumes or named volumes.

@@ -14,5 +14,19 @@ services:
       - webnet
     stdin_open: true
     tty: true
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    volumes:
+      - mongodatabase:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      webnet:
+        aliases:
+          - mongo
 networks:
   webnet:
+volumes:
+  mongodatabase:

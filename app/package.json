@@ -1,15 +1,16 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mongodb": "^3.2.3"
   },
   "scripts": {
-    "start": "node ./src/index.js",
-    "dev": "npx nodemon --watch src --legacy-watch ./src/index.js",
-    "debug": "npx nodemon --watch src --legacy-watch --inspect-brk=0.0.0.0 ./src/index.js"
+    "start": "node ./index.js",
+    "dev": "npx nodemon --watch . --legacy-watch ./index.js",
+    "debug": "npx nodemon --watch . --legacy-watch --inspect-brk=0.0.0.0 ./index.js"
   },
   "devDependencies": {
     "nodemon": "^1.19.0"
