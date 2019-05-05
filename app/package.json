@@ -11,9 +11,13 @@
   "scripts": {
     "start": "node ./index.js",
     "dev": "npx nodemon --watch . --ignore node_modules/ --legacy-watch ./index.js",
-    "debug": "npx nodemon --watch . --ignore node_modules/ --legacy-watch --inspect-brk=0.0.0.0 ./index.js"
+    "debug": "npx nodemon --watch . --ignore node_modules/ --legacy-watch --inspect-brk=0.0.0.0 ./index.js",
+    "test": "NODE_ENV=test npx mocha tests"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.1.4",
     "nodemon": "^1.19.0"
   }
 }

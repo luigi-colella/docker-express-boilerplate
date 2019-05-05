@@ -13,6 +13,7 @@ app.get('/',
             next();
         });
         client.on('error', err => {
+            console.error('Error in connecting to Redis');
             client.quit();
             next(err);
         });
@@ -27,11 +28,12 @@ app.get('/',
             function(err, client) {
                 if (err) {
                     console.error('Error in connecting to Mongo database');
+                    client.close();
                     return next(err);
                 }
-                console.log("Connected successfully to Mongo database");
                 client.db(dbName).admin().serverStatus(function(err, info) {
                     req.mongoVersion = info.version;
+                    client.close();
                     next();
                 });
           });
@@ -57,4 +59,8 @@ app.get('/',
     }
 )
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+if (process.env.NODE_ENV = 'test') {
+    module.exports = app;
+} else {
+    app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+}
