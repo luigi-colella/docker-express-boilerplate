@@ -13,9 +13,10 @@ Develop your next Express app easily and without worrying about your machine set
 
 ![Docker](https://github.com/lgcolella/docker-express/raw/master/repository/docker.png "Docker")
 ![Express](https://github.com/lgcolella/docker-express/raw/master/repository/express.png "Express")
-![MochaJS](https://github.com/lgcolella/docker-express/raw/master/repository/mocha.png "MochaJS")
 ![MongoDB](https://github.com/lgcolella/docker-express/raw/master/repository/mongo.png "MongoDB")
 ![Redis](https://github.com/lgcolella/docker-express/raw/master/repository/redis.png "Redis")
+![MochaJS](https://github.com/lgcolella/docker-express/raw/master/repository/mocha.png "MochaJS")
+![Yarn](https://github.com/lgcolella/docker-express/raw/master/repository/yarn.png "Yarn")
 
 # Requirements
 
