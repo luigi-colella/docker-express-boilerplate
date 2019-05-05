@@ -44,6 +44,19 @@ docker-compose down
 # Stop and remove services' containers, volumes, images and network related to the development environment
 docker-compose down --remove-orphans -v --rmi=all
 ```
+When you've launched the services' container, log into app's container shell:
+```sh
+docker-compose exec app bash
+```
+Once you are logged into the container, start the app using one of the following commands:
+```sh
+# Start application in production mode
+yarn start
+# Start application in development mode
+yarn dev
+# Start application in debug mode
+yarn debug
+```
 
 # Troubleshooting
 
