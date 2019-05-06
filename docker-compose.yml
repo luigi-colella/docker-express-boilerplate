@@ -3,6 +3,11 @@ services:
   app:
     environment: 
       - PORT=80
+      - MONGO_HOST=mongo
+      - MONGO_PORT=27017
+      - MONGO_DATABASE=data
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     build: ./app
     volumes:
       - "./app:/app"

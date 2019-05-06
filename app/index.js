@@ -1,12 +1,19 @@
+// Import modules
 const app = require('express')();
 const mongo = require('mongodb').MongoClient;
 const redis = require('redis');
+// Env variables
 const port = process.env.PORT;
+const mongoHost = process.env.MONGO_HOST;
+const mongoPort = process.env.MONGO_PORT;
+const mongoDatabase = process.env.MONGO_DATABASE;
+const redisHost = process.env.REDIS_HOST;
+const redisPort = process.env.REDIS_PORT;
 
 app.get('/',
     // Set Redis version
     (req, res, next) => {
-        const client = redis.createClient(6379, 'redis');
+        const client = redis.createClient(redisPort, redisHost);
         client.on('ready', () => {
             req.redisVersion = client.server_info.redis_version;
             client.quit();
@@ -20,10 +27,8 @@ app.get('/',
     },
     // Set MongoDB version
     (req, res, next) => {
-        const url = 'mongodb://mongo:27017'
-        const dbName = 'data'
         mongo.connect(
-            url,
+            `mongodb://${mongoHost}:${mongoPort}`,
             { useNewUrlParser: true },
             function(err, client) {
                 if (err) {
@@ -31,7 +36,7 @@ app.get('/',
                     client.close();
                     return next(err);
                 }
-                client.db(dbName).admin().serverStatus(function(err, info) {
+                client.db(mongoDatabase).admin().serverStatus((err, info) => {
                     req.mongoVersion = info.version;
                     client.close();
                     next();
