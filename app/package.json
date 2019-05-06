@@ -9,7 +9,7 @@
     "redis": "^2.8.0"
   },
   "scripts": {
-    "start": "node ./index.js",
+    "start": "NODE_ENV=production node ./index.js",
     "dev": "npx nodemon --watch . --ignore node_modules/ --legacy-watch ./index.js",
     "debug": "npx nodemon --watch . --ignore node_modules/ --legacy-watch --inspect-brk=0.0.0.0 ./index.js",
     "test": "NODE_ENV=test npx mocha tests"

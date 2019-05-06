@@ -33,7 +33,6 @@ app.get('/',
             function(err, client) {
                 if (err) {
                     console.error('Error in connecting to Mongo database');
-                    client.close();
                     return next(err);
                 }
                 client.db(mongoDatabase).admin().serverStatus((err, info) => {
@@ -52,19 +51,24 @@ app.get('/',
     `),
     // Default error handler
     (err, req, res, next) => {
-        const error = (new Error(err));
-        console.error(error.stack);
-        // This is only for demonstration purposes. Not print error' details on the client side in production!
-        res.status(500).send(`
-            <h1>Something broke! :(</h1>
-            <p><b>Code: </b><span>${error.code}</span></p>
-            <p><b>Message: </b><span>${error.message}</span></p>
-            <pre>${error.stack.slice(7)}</pre>
-        `);
+        if (process.env.NODE_ENV === 'production') {
+            res.status(500).send(`
+                <h1>Something broke! :(</h1>
+            `);
+        } else {
+            const error = (new Error(err));
+            console.error(error.stack);
+            res.status(500).send(`
+                <h1>Something broke! :(</h1>
+                <p><b>Code: </b><span>${error.code}</span></p>
+                <p><b>Message: </b><span>${error.message}</span></p>
+                <pre>${error.stack.slice(7)}</pre>
+            `);
+        }
     }
 )
 
-if (process.env.NODE_ENV = 'test') {
+if (process.env.NODE_ENV === 'test') {
     module.exports = app;
 } else {
     app.listen(port, () => console.log(`Example app listening on port ${port}!`));
