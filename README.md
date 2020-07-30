@@ -1,5 +1,4 @@
-
-# Docker Express
+# Docker Express Boilerplate
 
 Develop your next Express app easily and without worrying about your machine setup.
 
@@ -11,12 +10,12 @@ Develop your next Express app easily and without worrying about your machine set
 
 # Stack
 
-![Docker](https://github.com/lgcolella/docker-express/raw/master/repository/docker.png "Docker")
-![Express](https://github.com/lgcolella/docker-express/raw/master/repository/express.png "Express")
-![MongoDB](https://github.com/lgcolella/docker-express/raw/master/repository/mongo.png "MongoDB")
-![Redis](https://github.com/lgcolella/docker-express/raw/master/repository/redis.png "Redis")
-![MochaJS](https://github.com/lgcolella/docker-express/raw/master/repository/mocha.png "MochaJS")
-![Yarn](https://github.com/lgcolella/docker-express/raw/master/repository/yarn.png "Yarn")
+![Docker](https://github.com/lgcolella/docker-express-boilerplate/raw/master/repository/docker.png "Docker")
+![Express](https://github.com/lgcolella/docker-express-boilerplate/raw/master/repository/express.png "Express")
+![MongoDB](https://github.com/lgcolella/docker-express-boilerplate/raw/master/repository/mongo.png "MongoDB")
+![Redis](https://github.com/lgcolella/docker-express-boilerplate/raw/master/repository/redis.png "Redis")
+![MochaJS](https://github.com/lgcolella/docker-express-boilerplate/raw/master/repository/mocha.png "MochaJS")
+![Yarn](https://github.com/lgcolella/docker-express-boilerplate/raw/master/repository/yarn.png "Yarn")
 
 # Requirements
 
